@@ -12,7 +12,7 @@ yarn-error.log*
 pnpm-debug.log*
 
 explain.md
-
+challenges.md
 # Environment and local config
 .env*
 .env.local

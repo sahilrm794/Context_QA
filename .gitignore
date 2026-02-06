@@ -13,6 +13,7 @@ pnpm-debug.log*
 
 explain.md
 challenges.md
+scaling_implementation.md
 # Environment and local config
 .env*
 .env.local

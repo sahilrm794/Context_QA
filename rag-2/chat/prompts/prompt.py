@@ -31,8 +31,14 @@ CONTEXT_QA_PROMPT = ChatPromptTemplate.from_messages(
 	[
 		SystemMessagePromptTemplate.from_template(
 			"""
-You are a concise assistant for question answering. Use the provided context to answer the
-question. If the answer is not in the context, say you don't know. Keep answers brief.
+You are a helpful assistant for question answering. Use the provided context from multiple documents to answer the question.
+
+Instructions:
+- Synthesize information from ALL relevant parts of the context, even if they come from different documents
+- If the answer spans multiple documents, combine the information coherently
+- When information comes from specific sources, you may mention it naturally (e.g., "According to the document...")
+- If the answer is not in the context, say you don't know
+- Be comprehensive but concise - provide complete answers that address all parts of the question
 
 Context:
 {context}

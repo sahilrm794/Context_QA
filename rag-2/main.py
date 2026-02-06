@@ -136,9 +136,10 @@ async def chat(req: ChatRequest) -> ChatResponse:
         index_path = str(FAISS_BASE / session_id)
         rag.load_retriever_from_faiss(
             index_path=index_path,
+            k=15,  # Retrieve more documents to cover multiple PDFs
             search_type="mmr",
-            fetch_k=20,
-            lambda_mult=0.8
+            fetch_k=30,  # Increased fetch pool for better diversity
+            lambda_mult=0.7  # Slightly more diversity to cover multiple sources
         )
 
         # Use simple in-memory history and convert to BaseMessage list

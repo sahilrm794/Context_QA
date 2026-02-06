@@ -6,7 +6,7 @@ from enum import Enum
 
 class ChatAnswer(BaseModel):
     """Validate chat answer type and length."""
-    answer: Annotated[str, Field(min_length=1, max_length=4096)]
+    answer: Annotated[str, Field(min_length=1, max_length=10000)]
 
 
 class PromptType(str, Enum):

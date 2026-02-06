@@ -161,7 +161,22 @@ class ConversationalRAG:
 
     @staticmethod
     def _format_docs(docs) -> str:
-        return "\n\n".join(getattr(d, "page_content", str(d)) for d in docs)
+        """Format documents with source information for better multi-document answers."""
+        from pathlib import Path
+        formatted_parts = []
+        for i, d in enumerate(docs, 1):
+            content = getattr(d, "page_content", str(d))
+            metadata = getattr(d, "metadata", {})
+            source = metadata.get("source", "Unknown")
+
+            # Extract just the filename from the full path
+            if source and source != "Unknown":
+                source_name = Path(source).name
+                formatted_parts.append(f"[Document: {source_name}]\n{content}")
+            else:
+                formatted_parts.append(content)
+
+        return "\n\n---\n\n".join(formatted_parts)
 
     def _build_lcel_chain(self):
         try:

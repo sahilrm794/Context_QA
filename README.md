@@ -1,6 +1,6 @@
 # ContextRAG
 ## Demo
-<img align="left" src="assets/contextqa.gif" />
+<img align="left" src="assets/contextqa.mp4" />
 <br/> <br/>
 
 ## Details

@@ -1,8 +1,4 @@
 # ContextRAG
-## Demo
-<img align="left" src="assets/contextqa.mp4" />
-<br/> <br/>
-
 ## Details
 - Built a session-based conversational RAG system using FastAPI, FAISS, and LangChain, enabling isolated document ingestion and querying per session.
 - Implemented contextual question rewriting using chat history to improve retrieval accuracy for multi-turn conversations.
